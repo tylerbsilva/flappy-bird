@@ -26,7 +26,7 @@ gulp.task('watch', function() {
   livereload.listen();
   // Watch any files in dist/, reload on change
   gulp.watch(['site/css/**']).on('change', livereload.changed);
-  gulp.watch(['site/js/app.js']).on('change', livereload.changed);
+  gulp.watch(['site/js/**']).on('change', livereload.changed);
 });
 
 // Minify index
