@@ -21,12 +21,12 @@ gulp.task('sass', function() {
 // Watch task
 gulp.task('watch', function() {
   gulp.watch('site/scss/*.scss', ['sass']);
-  gulp.watch('site/js/**', ['styles']);
+  gulp.watch('site/js/main.js', ['styles']);
   // Create LiveReload server
   livereload.listen();
   // Watch any files in dist/, reload on change
   gulp.watch(['site/css/**']).on('change', livereload.changed);
-  gulp.watch(['site/js/**']).on('change', livereload.changed);
+  gulp.watch(['site/js/app.js']).on('change', livereload.changed);
 });
 
 // Minify index
