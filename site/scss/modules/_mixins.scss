@@ -1,0 +1,78 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin font-size($sizeValue: 12 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+@mixin fullwidth() {
+  position: relative;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+
+
+@mixin halfwidth() {
+  position: relative;
+  width: 50%;
+  height: auto;
+  clear: both;
+}
+
+@mixin thirdwidth() {
+  position: relative;
+  width: 33.3333%;
+  height: auto;
+  clear: both;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin noOutlines(){
+  outline: 0;
+  border: 0;
+  &:hover, &:active {
+    outline: 0;
+    border: 0;
+  }
+}
+
+@mixin buttonPress() {
+  @include noOutlines();
+  box-shadow: 0 5px 0 #999999;
+  &:active {
+    position: relative;
+    top: 5px;
+    box-shadow: 0 0 1px #999999;
+  }
+}
