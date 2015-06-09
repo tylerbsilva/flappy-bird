@@ -50,7 +50,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   gulp.src('site/css/*.css')
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest('site/css'));
 });
 
 
