@@ -11,7 +11,6 @@ SpawnPipeSystem.prototype.run = function() {
 };
 
 SpawnPipeSystem.prototype.tick = function() {
-  console.log("Pipe!");
   var arr = this.entities;
   arr.push(new pipeTop.PipeTop());
   arr.push(new pipeBottom.PipeBottom());
