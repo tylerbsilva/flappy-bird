@@ -4,10 +4,11 @@ var inputSystem = require('./systems/input');
 var pipeSystem = require('./systems/spawn');
 
 var bird = require('./entities/bird');
-var pipe = require('./entities/pipe');
+var pipeTop = require('./entities/pipeTop');
+var pipeBottom = require('./entities/pipeBottom');
 
 var FlappyBird = function() {
-  this.entities = [new bird.Bird(), new pipe.Pipe()];
+  this.entities = [new bird.Bird(), new pipeTop.PipeTop(), new pipeBottom.PipeBottom()];
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
   this.clicks = new inputSystem.InputSystem(this.entities);
