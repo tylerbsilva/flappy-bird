@@ -7,6 +7,7 @@ BirdGraphicsComponent.prototype.draw = function(context) {
 
     context.save();
     context.translate(position.x, position.y);
+    context.fillStyle = "yellow";
     context.beginPath();
     context.arc(0, 0, 0.02, 0, 2 * Math.PI);
     context.fill();
