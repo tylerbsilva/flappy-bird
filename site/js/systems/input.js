@@ -6,7 +6,7 @@ var InputSystem = function(entities) {
 };
 
 InputSystem.prototype.run = function() {
-  this.canvas.addEventListener('click touchend', this.onClick.bind(this));
+  this.canvas.addEventListener('click', this.onClick.bind(this));
 };
 
 InputSystem.prototype.onClick = function() {

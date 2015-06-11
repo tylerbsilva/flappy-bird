@@ -3,8 +3,8 @@ var physicsComponent = require("../components/physics/physics");
 
 var Pipe = function() {
   var physics = new physicsComponent.PhysicsComponent(this);
-  physics.position.x = 0.25;
-  physics.velocity.x = 0;
+  physics.position.x = 1;
+  physics.velocity.x = -0.5;
 
   var graphics = new graphicsComponent.PipeGraphicsComponent(this);
 
