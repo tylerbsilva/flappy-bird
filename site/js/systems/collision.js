@@ -1,5 +1,15 @@
+var bird = require('../entities/bird');
+var pipeTop = require('../entities/bird');
+var pipeBottom = require('../entities/bird');
+var floor = require('../entities/floor');
+var ceiling = require('../entities/ceiling');
+
 var CollisionSystem = function(entities) {
   this.entities = entities;
+};
+
+CollisionSystem.prototype.run = function() {
+  window.setInterval(this.tick.bind(this), 1000 /60);
 };
 
 CollisionSystem.prototype.tick = function() {
@@ -22,10 +32,18 @@ CollisionSystem.prototype.tick = function() {
 
       if (entityA.components.collision.onCollision) {
         entityA.components.collision.onCollision(entityB);
+
+        if (entityA instanceof bird.Bird) {
+          this.entities.splice(3, this.entities.length-3);
+        }
+
       }
 
       if (entityB.components.collision.onCollision) {
         entityB.components.collision.onCollision(entityA);
+        if (entityB instanceof bird.Bird) {
+          this.entities.splice(3, this.entities.length-3);
+        }
       }
     }
   }
