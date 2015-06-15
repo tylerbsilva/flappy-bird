@@ -40,19 +40,6 @@ GraphicsSystem.prototype.tick = function() {
   window.requestAnimationFrame(this.tick.bind(this));
 };
 
-GraphicsSystem.prototype.reset = function() {
-  var thisSys = this;
-  thisSys.deleteAllPipes();
-};
-
-
-GraphicsSystem.prototype.deleteAllPipes = function() {
-  this.entities.splice(3, ((this.entities.length)-3));
-};
-
-
-
-
 // Function: Draw grid based on given gap size and how many lines should be drawn
 // Provided by Vicky Leong
 GraphicsSystem.prototype.drawGrid = function(gap, times) {

@@ -3,6 +3,7 @@ var pipeTop = require('../entities/bird');
 var pipeBottom = require('../entities/bird');
 var floor = require('../entities/floor');
 var ceiling = require('../entities/ceiling');
+var pipeDestroyer = require('../entities/pipeDestroyer');
 
 var CollisionSystem = function(entities) {
   this.entities = entities;
@@ -41,10 +42,14 @@ CollisionSystem.prototype.tick = function() {
 
       if (entityB.components.collision.onCollision) {
         entityB.components.collision.onCollision(entityA);
+
         if (entityB instanceof bird.Bird) {
           this.entities.splice(3, this.entities.length-3);
         }
+
+
       }
+
     }
   }
 };

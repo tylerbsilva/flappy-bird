@@ -2,12 +2,12 @@ var graphicsComponent = require("../components/graphics/rect");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
-var Floor = function() {
-  this.name = 'floor';
+var PipeDestroyer = function() {
+  this.name = 'PipeDestroyer';
   this.color = 'rgb(99,71,48)';
   this.size = {
-    x: (document.getElementById('main-canvas').width),
-    y: 0.02
+    x: 0.001,
+    y: 1
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
@@ -24,8 +24,8 @@ var Floor = function() {
   };
 };
 
-Floor.prototype.onCollision = function(entity) {
-  console.log("Floor collided with entity:", entity);
+PipeDestroyer.prototype.onCollision = function(entity) {
+  console.log("PipeDestroyer collided with entity:", entity);
 };
 
-exports.Floor = Floor;
+exports.PipeDestroyer = PipeDestroyer;
