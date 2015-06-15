@@ -1,8 +1,8 @@
-var PipeBottomGraphicsComponent = function(entity) {
+var RectGraphicsComponent = function(entity) {
     this.entity = entity;
 };
 
-PipeBottomGraphicsComponent.prototype.draw = function(context) {
+RectGraphicsComponent.prototype.draw = function(context) {
     var position = this.entity.components.physics.position;
     var size = this.entity.size;
     var color = this.entity.color;
@@ -13,4 +13,4 @@ PipeBottomGraphicsComponent.prototype.draw = function(context) {
     context.restore();
 };
 
-exports.PipeBottomGraphicsComponent = PipeBottomGraphicsComponent;
+exports.RectGraphicsComponent = RectGraphicsComponent;

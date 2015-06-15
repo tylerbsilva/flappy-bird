@@ -35,7 +35,7 @@ GraphicsSystem.prototype.tick = function() {
     }
     entity.components.graphics.draw(this.context);
   }
-  this.drawGrid();
+  //this.drawGrid();
   this.context.restore();
   window.requestAnimationFrame(this.tick.bind(this));
 };

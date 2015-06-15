@@ -2,19 +2,17 @@ var graphicsComponent = require("../components/graphics/rect");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
-var PipeBottom = function() {
-  this.name = 'Pipe Bottom';
-  this.color = 'green';
-
+var Ceiling = function() {
+  this.name = 'Ceiling';
+  this.color = 'brown';
   this.size = {
-    x: 0.2,
-    y: 0.4
+    x: 1,
+    y: 0.02
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
-  physics.position.x = 1.5;
-  physics.position.y = 0;
-  physics.velocity.x = -0.5;
+  physics.position.x = 0;
+  physics.position.y = 1;
 
   var graphics = new graphicsComponent.RectGraphicsComponent(this);
   var collision = new collisionComponent.RectCollisionComponent(this, this.size);
@@ -26,8 +24,8 @@ var PipeBottom = function() {
   };
 };
 
-PipeBottom.prototype.onCollision = function(entity) {
-  console.log("PipeBottom collided with entity:", entity);
+Ceiling.prototype.onCollision = function(entity) {
+
 };
 
-exports.PipeBottom = PipeBottom;
+exports.Ceiling = Ceiling;
