@@ -3,6 +3,9 @@ var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var PipeBottom = function() {
+  this.name = 'Pipe Bottom';
+  this.color = 'green';
+
   this.size = {
     x: 0.2,
     y: 0.4
@@ -13,7 +16,7 @@ var PipeBottom = function() {
   physics.position.y = 0;
   physics.velocity.x = -0.5;
 
-  var graphics = new graphicsComponent.PipeBottomGraphicsComponent(this, this.size);
+  var graphics = new graphicsComponent.PipeBottomGraphicsComponent(this);
   var collision = new collisionComponent.RectCollisionComponent(this, this.size);
 
   this.components = {

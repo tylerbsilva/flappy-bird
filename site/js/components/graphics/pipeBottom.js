@@ -5,11 +5,11 @@ var PipeBottomGraphicsComponent = function(entity) {
 PipeBottomGraphicsComponent.prototype.draw = function(context) {
     var position = this.entity.components.physics.position;
     var size = this.entity.size;
+    var color = this.entity.color;
 
     context.save();
-    context.rect(position.x, position.y, size.x, size.y);
-    context.fillStyle = "green";
-    context.fill();
+    context.fillStyle = color;
+    context.fillRect(position.x, position.y, size.x, size.y);
     context.restore();
 };
 

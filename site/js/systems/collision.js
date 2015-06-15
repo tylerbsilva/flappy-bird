@@ -5,6 +5,7 @@ var CollisionSystem = function(entities) {
 CollisionSystem.prototype.tick = function() {
   for (var i=0; i<this.entities.length; i++) {
     var entityA = this.entities[i];
+    //skips to next entity if there are no components
     if (!('collision' in entityA.components)) {
       continue;
     }

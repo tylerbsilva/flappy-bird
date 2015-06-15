@@ -4,14 +4,14 @@ var BirdGraphicsComponent = function(entity) {
 
 BirdGraphicsComponent.prototype.draw = function(context) {
     var position = this.entity.components.physics.position;
+    var radius = this.entity.radius;
+    var color = this.entity.color;
 
     context.save();
-    //context.translate(position.x, position.y);
     context.beginPath();
-    context.arc(position.x, position.y, 0.02, 0, 2 * Math.PI);
-    context.fillStyle = "yellow";
+    context.fillStyle = color;
+    context.arc(position.x, position.y, radius, 0, 2 * Math.PI);
     context.fill();
-    context.closePath();
     context.restore();
 };
 
