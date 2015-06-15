@@ -6,7 +6,6 @@ var RectCollisionComponent = function(entity, size) {
 
 RectCollisionComponent.prototype.collidesWith = function(entity) {
   if (entity.components.collision.type == 'circle') {
-    alert("RECT COLLIDE CIRCLE");
     return this.collideCircle(entity);
   }
   else if (entity.components.collision.type == 'rect') {

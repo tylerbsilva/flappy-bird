@@ -4,6 +4,7 @@ var collisionComponent = require("../components/collision/circle");
 
 var Bird = function() {
   var physics = new physicsComponent.PhysicsComponent(this);
+  physics.position.x = 0;
   physics.position.y = 0.5;
   physics.acceleration.y = -2;
 

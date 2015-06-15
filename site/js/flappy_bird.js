@@ -12,14 +12,14 @@ var FlappyBird = function() {
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
   this.clicks = new inputSystem.InputSystem(this.entities);
-  //this.pipes = new pipeSystem.SpawnPipeSystem(this.entities);
+  this.pipes = new pipeSystem.SpawnPipeSystem(this.entities);
 };
 
 FlappyBird.prototype.run = function() {
   this.graphics.run();
   this.physics.run();
   this.clicks.run();
-  //this.pipes.run();
+  this.pipes.run();
 };
 
 exports.FlappyBird = FlappyBird;
