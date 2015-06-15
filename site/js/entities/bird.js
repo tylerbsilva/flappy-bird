@@ -10,7 +10,7 @@ var Bird = function() {
   var physics = new physicsComponent.PhysicsComponent(this);
   physics.position.x = 0;
   physics.position.y = 0.5;
-  physics.acceleration.y = -1.75;
+  //physics.acceleration.y = -1.75;
 
   var graphics = new graphicsComponent.BirdGraphicsComponent(this);
   var collision = new collisionComponent.CircleCollisionComponent(this, this.radius);

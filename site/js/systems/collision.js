@@ -4,6 +4,7 @@ var pipeBottom = require('../entities/bird');
 var floor = require('../entities/floor');
 var ceiling = require('../entities/ceiling');
 var pipeDestroyer = require('../entities/pipeDestroyer');
+var score = require('../entities/score');
 
 var CollisionSystem = function(entities) {
   this.entities = entities;
@@ -35,11 +36,11 @@ CollisionSystem.prototype.tick = function() {
         entityA.components.collision.onCollision(entityB);
 
         if (entityA instanceof bird.Bird) {
-          this.entities.splice(4, this.entities.length-4);
+          this.entities.splice(5, this.entities.length-5);
         }
 
-        else if (entityA instanceof pipeDestroyer.PipeDestroyer){
-          this.entities.splice(4,2);
+        if (entityA instanceof pipeDestroyer.PipeDestroyer){
+          this.entities.splice(5,2);
         }
 
       }
@@ -48,11 +49,11 @@ CollisionSystem.prototype.tick = function() {
         entityB.components.collision.onCollision(entityA);
 
         if (entityB instanceof bird.Bird) {
-          this.entities.splice(4, this.entities.length-4);
+          this.entities.splice(5, this.entities.length-5);
         }
 
-        else if (entityB instanceof pipeDestroyer.PipeDestroyer){
-          this.entities.splice(4,2);
+        if (entityB instanceof pipeDestroyer.PipeDestroyer){
+          this.entities.splice(5,2);
         }
 
 

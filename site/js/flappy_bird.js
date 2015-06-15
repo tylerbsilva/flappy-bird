@@ -10,9 +10,10 @@ var pipeBottom = require('./entities/pipeBottom');
 var floor = require('./entities/floor');
 var ceiling = require('./entities/ceiling');
 var pipeDestroyer = require('./entities/pipeDestroyer');
+var score = require('./entities/score');
 
 var FlappyBird = function() {
-  this.entities = [new floor.Floor(), new ceiling.Ceiling(), new bird.Bird(), new pipeDestroyer.PipeDestroyer()];
+  this.entities = [new floor.Floor(), new ceiling.Ceiling(), new bird.Bird(), new pipeDestroyer.PipeDestroyer(), new score.Score()];
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
   this.clicks = new inputSystem.InputSystem(this.entities);
