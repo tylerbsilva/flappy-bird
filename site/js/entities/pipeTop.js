@@ -4,15 +4,16 @@ var collisionComponent = require("../components/collision/rect");
 
 var PipeTop = function() {
   this.size = {
-    x: 0.1,
+    x: 0.2,
     y: 0.4
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
   physics.position.x = 1;
+  physics.position.y = 0.6;
   physics.velocity.x = -0.5;
 
-  var graphics = new graphicsComponent.PipeTopGraphicsComponent(this);
+  var graphics = new graphicsComponent.PipeTopGraphicsComponent(this, this.size);
   var collision = new collisionComponent.RectCollisionComponent(this, this.size);
 
   this.components = {
