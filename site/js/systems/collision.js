@@ -35,7 +35,11 @@ CollisionSystem.prototype.tick = function() {
         entityA.components.collision.onCollision(entityB);
 
         if (entityA instanceof bird.Bird) {
-          this.entities.splice(3, this.entities.length-3);
+          this.entities.splice(4, this.entities.length-4);
+        }
+
+        else if (entityA instanceof pipeDestroyer.PipeDestroyer){
+          this.entities.splice(4,2);
         }
 
       }
@@ -44,7 +48,11 @@ CollisionSystem.prototype.tick = function() {
         entityB.components.collision.onCollision(entityA);
 
         if (entityB instanceof bird.Bird) {
-          this.entities.splice(3, this.entities.length-3);
+          this.entities.splice(4, this.entities.length-4);
+        }
+
+        else if (entityB instanceof pipeDestroyer.PipeDestroyer){
+          this.entities.splice(4,2);
         }
 
 

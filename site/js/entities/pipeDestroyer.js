@@ -11,11 +11,12 @@ var PipeDestroyer = function() {
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
-  physics.position.x = -(document.getElementById('main-canvas').width)/2;
-  physics.position.y = 0;
+  physics.position.x = -(document.getElementById('main-canvas').width)/200;
+  physics.position.y = 0.1;
 
   var graphics = new graphicsComponent.RectGraphicsComponent(this);
   var collision = new collisionComponent.RectCollisionComponent(this, this.size);
+  collision.onCollision = this.onCollision.bind(this);
 
   this.components = {
     physics: physics,
@@ -25,7 +26,7 @@ var PipeDestroyer = function() {
 };
 
 PipeDestroyer.prototype.onCollision = function(entity) {
-  console.log("PipeDestroyer collided with entity:", entity);
+  //console.log("PipeDestroyer collided with entity:", entity);
 };
 
 exports.PipeDestroyer = PipeDestroyer;

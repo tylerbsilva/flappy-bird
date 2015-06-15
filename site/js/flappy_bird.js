@@ -12,7 +12,7 @@ var ceiling = require('./entities/ceiling');
 var pipeDestroyer = require('./entities/pipeDestroyer');
 
 var FlappyBird = function() {
-  this.entities = [new floor.Floor(), new ceiling.Ceiling(), new bird.Bird()];
+  this.entities = [new floor.Floor(), new ceiling.Ceiling(), new bird.Bird(), new pipeDestroyer.PipeDestroyer()];
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
   this.clicks = new inputSystem.InputSystem(this.entities);
@@ -25,7 +25,6 @@ FlappyBird.prototype.run = function() {
   this.physics.run();
   this.clicks.run();
   this.pipes.run();
-  //this.collision.run();
 };
 
 exports.FlappyBird = FlappyBird;
