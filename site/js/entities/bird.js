@@ -27,6 +27,7 @@ Bird.prototype.onCollision = function(entity) {
   console.log("Bird collided with entity:", entity);
   this.components.physics.position.y = 0.5;
   this.components.physics.position.x = 0;
+  this.components.physics.acceleration.y = -1.75;
 };
 
 exports.Bird = Bird;
