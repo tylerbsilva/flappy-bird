@@ -2,17 +2,17 @@ var graphicsComponent = require("../components/graphics/rect");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
-var Score = function() {
-  this.name = 'PipeDestroyer';
-  this.color = 'rgba(226,162,111,100)';
+var Scorer = function() {
+  this.name = 'Score!';
+  this.color = 'rgba(0,0,0,0)';
   this.size = {
     x: 0.001,
-    y: 0.2
+    y: 0.8
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
-  physics.position.x = -0.15;
-  physics.position.y = 0.1;
+  physics.position.x = -0.2;
+  physics.position.y = 0;
 
   var graphics = new graphicsComponent.RectGraphicsComponent(this);
   var collision = new collisionComponent.RectCollisionComponent(this, this.size);
@@ -25,8 +25,8 @@ var Score = function() {
   };
 };
 
-Score.prototype.onCollision = function(entity) {
-  console.log("YAY, BIRD FLEW THROUGH:", entity);
+Scorer.prototype.onCollision = function(entity) {
+
 };
 
-exports.Score = Score;
+exports.Scorer = Scorer;
