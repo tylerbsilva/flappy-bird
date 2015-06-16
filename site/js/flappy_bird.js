@@ -14,6 +14,8 @@ var pipeDestroyer = require('./entities/pipeDestroyer');
 var scorer = require('./entities/scorer');
 
 var FlappyBird = function() {
+  this.status = 0; // 0 - Start, 1 - Playing, 2 - Paused
+
   this.entities = [new floor.Floor(), new ceiling.Ceiling(), new bird.Bird(), new pipeDestroyer.PipeDestroyer(), new scorer.Scorer()];
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
@@ -23,11 +25,19 @@ var FlappyBird = function() {
   this.score = new scoreSystem.ScoreSystem();
 };
 
+FlappyBird.prototype.start = function(){
+  this.graphics.base();
+};
+
 FlappyBird.prototype.run = function() {
   this.graphics.run();
   this.physics.run();
   this.clicks.run();
   this.pipes.run();
+};
+
+FlappyBird.prototype.pause = function() {
+  this.graphics.pause();
 };
 
 exports.FlappyBird = FlappyBird;

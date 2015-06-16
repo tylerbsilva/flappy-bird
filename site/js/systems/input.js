@@ -7,6 +7,7 @@ var InputSystem = function(entities) {
 InputSystem.prototype.run = function() {
   this.canvas.addEventListener('click', this.onClick.bind(this));
   this.canvas.addEventListener('touchstart', this.onTouch.bind(this));
+  this.canvas.addEventListener('keydown', this.pause.bind(this));
 };
 
 InputSystem.prototype.onClick = function() {
@@ -20,6 +21,10 @@ InputSystem.prototype.onTouch = function(e) {
   e.preventDefault();
   var bird = this.entities[2];
   bird.components.physics.velocity.y = 0.6;
+};
+
+InputSystem.prototype.pause = function(e) {
+  console.log(e.which);
 };
 
 exports.InputSystem = InputSystem;

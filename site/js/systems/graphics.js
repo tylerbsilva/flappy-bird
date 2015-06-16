@@ -6,9 +6,19 @@ var GraphicsSystem = function(entities) {
   this.context = this.canvas.getContext('2d');
 };
 
+GraphicsSystem.prototype.base = function(){
+  this.tick.bind(this);
+  this.tick(1);
+};
+
 GraphicsSystem.prototype.run = function() {
   // Run the render loop
   window.requestAnimationFrame(this.tick.bind(this));
+};
+
+GraphicsSystem.prototype.pause = function() {
+	window.cancelAnimationFrame(window.requestAnimationFrame(this.tick.bind(this)));
+	document.getElementById('pause').className = "";
 };
 
 GraphicsSystem.prototype.tick = function() {
