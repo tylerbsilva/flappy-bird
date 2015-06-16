@@ -11,7 +11,7 @@ var Scorer = function() {
   };
 
   var physics = new physicsComponent.PhysicsComponent(this);
-  physics.position.x = -0.2;
+  physics.position.x = -0.25;
   physics.position.y = 0;
 
   var graphics = new graphicsComponent.RectGraphicsComponent(this);
