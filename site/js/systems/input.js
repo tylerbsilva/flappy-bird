@@ -10,13 +10,13 @@ InputSystem.prototype.run = function() {
 };
 
 InputSystem.prototype.onClick = function() {
-  console.log('click');
+  //console.log('click');
   var bird = this.entities[2];
   bird.components.physics.velocity.y = 0.6;
 };
 
 InputSystem.prototype.onTouch = function(e) {
-  console.log('touch');
+  //console.log('touch');
   e.preventDefault();
   var bird = this.entities[2];
   bird.components.physics.velocity.y = 0.6;
