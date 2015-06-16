@@ -4,7 +4,7 @@ var collisionComponent = require("../components/collision/rect");
 
 var Score = function() {
   this.name = 'PipeDestroyer';
-  this.color = 'rgba(226,162,111,0)';
+  this.color = 'rgba(226,162,111,100)';
   this.size = {
     x: 0.001,
     y: 0.2

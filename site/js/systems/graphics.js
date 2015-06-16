@@ -43,26 +43,26 @@ GraphicsSystem.prototype.tick = function() {
 // Function: Draw grid based on given gap size and how many lines should be drawn
 // Provided by Vicky Leong
 GraphicsSystem.prototype.drawGrid = function(gap, times) {
-	this.gap   = gap   || 0.1;
-	this.times = times || 10;
-	this.context.lineWidth = 0.001;
-	this.context.beginPath();
-	for (var i = 0; i < (this.gap*this.times); i += this.gap) {
-		// Positive y
-		this.context.moveTo(-this.gap*this.times, i);
-		this.context.lineTo( this.gap*this.times, i);
-		// Negative y
-		this.context.moveTo(-this.gap*this.times, -i);
-		this.context.lineTo( this.gap*this.times, -i);
-		// Positive x
-		this.context.moveTo(i, -this.gap*this.times);
-		this.context.lineTo(i,  this.gap*this.times);
-		// Negative x
-		this.context.moveTo(-i, -this.gap*this.times);
-		this.context.lineTo(-i,  this.gap*this.times);
-	}
-	this.context.strokeStyle = "#AAA";
-	this.context.stroke();
+  this.gap   = gap   || 0.1;
+  this.times = times || 10;
+  this.context.lineWidth = 0.001;
+  this.context.beginPath();
+  for (var i = 0; i < (this.gap*this.times); i += this.gap) {
+    // Positive y
+    this.context.moveTo(-this.gap*this.times, i);
+    this.context.lineTo( this.gap*this.times, i);
+    // Negative y
+    this.context.moveTo(-this.gap*this.times, -i);
+    this.context.lineTo( this.gap*this.times, -i);
+    // Positive x
+    this.context.moveTo(i, -this.gap*this.times);
+    this.context.lineTo(i,  this.gap*this.times);
+    // Negative x
+    this.context.moveTo(-i, -this.gap*this.times);
+    this.context.lineTo(-i,  this.gap*this.times);
+  }
+  this.context.strokeStyle = "#AAA";
+  this.context.stroke();
 };
 
 exports.GraphicsSystem = GraphicsSystem;

@@ -36,10 +36,12 @@ CollisionSystem.prototype.tick = function() {
         entityA.components.collision.onCollision(entityB);
 
         if (entityA instanceof bird.Bird) {
+          //takes all pipes off
           this.entities.splice(5, this.entities.length-5);
         }
 
         if (entityA instanceof pipeDestroyer.PipeDestroyer){
+          //takes 2 pipes off that are off screen
           this.entities.splice(5,2);
         }
 
@@ -49,10 +51,12 @@ CollisionSystem.prototype.tick = function() {
         entityB.components.collision.onCollision(entityA);
 
         if (entityB instanceof bird.Bird) {
+          //takes all pipes off
           this.entities.splice(5, this.entities.length-5);
         }
 
         if (entityB instanceof pipeDestroyer.PipeDestroyer){
+          //takes 2 pipes off that are off screen
           this.entities.splice(5,2);
         }
 
