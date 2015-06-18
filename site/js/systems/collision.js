@@ -1,4 +1,5 @@
 var scoreSystem = require('./score');
+var graphicsSystem = require('./graphics');
 
 var bird = require('../entities/bird');
 var pipeTop = require('../entities/pipeTop');
@@ -8,6 +9,7 @@ var scorer = require('../entities/scorer');
 var CollisionSystem = function(entities) {
   this.entities = entities;
   this.scoreSystem = new scoreSystem.ScoreSystem();
+  this.graphicsSystem = new graphicsSystem.GraphicsSystem();
 };
 
 CollisionSystem.prototype.run = function() {
@@ -58,7 +60,11 @@ CollisionSystem.prototype.tick = function() {
 
       if (entityB.components.collision.onCollision) {
         entityB.components.collision.onCollision(entityA);
-
+        if (entityB instanceof bird.Bird) {
+          //takes all pipes off
+          this.entities.splice(5, this.entities.length-5);
+          this.scoreSystem.reset();
+        }
 
       }
 

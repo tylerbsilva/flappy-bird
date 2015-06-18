@@ -4,6 +4,7 @@ var GraphicsSystem = function(entities) {
   this.canvas = document.getElementById('main-canvas');
   // Context is what we draw to
   this.context = this.canvas.getContext('2d');
+  this.frame = 0;
 };
 
 GraphicsSystem.prototype.base = function(){
@@ -13,11 +14,12 @@ GraphicsSystem.prototype.base = function(){
 
 GraphicsSystem.prototype.run = function() {
   // Run the render loop
-  window.requestAnimationFrame(this.tick.bind(this));
+  this.frame = window.requestAnimationFrame(this.tick.bind(this));
+  document.getElementById('pause').className = "hidden";
 };
 
 GraphicsSystem.prototype.pause = function() {
-	window.cancelAnimationFrame(window.requestAnimationFrame(this.tick.bind(this)));
+	window.cancelAnimationFrame(this.frame);
 	document.getElementById('pause').className = "";
 };
 

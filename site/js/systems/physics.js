@@ -1,19 +1,24 @@
 var collisionSystem = require("./collision");
+var timer = require("./timer");
 
 var PhysicsSystem = function(entities) {
   this.entities = entities;
   this.collisionSystem = new collisionSystem.CollisionSystem(entities);
+  this.timer = 0;
 };
 
 PhysicsSystem.prototype.run = function() {
   // Run the update loop
-  window.setInterval(this.tick.bind(this), 1000 /60);
+  this.timer = new timer.SetTimer(this.tick.bind(this), 1000/60);
 };
 
 PhysicsSystem.prototype.pause = function() {
-  this.collisionSystem.tick(1);
+  this.timer.pause();
 };
 
+PhysicsSystem.prototype.resume = function() {
+  this.timer.resume();
+};
 
 PhysicsSystem.prototype.tick = function() {
   for (var i=0; i<this.entities.length; i++) {
