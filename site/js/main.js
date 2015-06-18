@@ -16,4 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
       alert("PAUSED");
     }
   });
+
+  var pause = document.getElementById('pauseButton');
+  pause.addEventListener('click', function(){
+    alert('PAUSED');
+  });
 });

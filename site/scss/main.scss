@@ -13,16 +13,19 @@ canvas#main-canvas {
   height: 100%;
 }
 
-div#overlay {
+#overlay {
   position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
+  h1 {
+    margin-left: 1em;
+  }
+  #pauseButton{
+    margin-left: 2em;
+  }
 }
 
-#overlay h1 {
-  margin-left: 1em;
-}
 
 .hidden {
   visibility: hidden;
