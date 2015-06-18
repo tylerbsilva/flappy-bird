@@ -26,6 +26,33 @@ canvas#main-canvas {
   }
 }
 
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #cb4e4e;
+  color: #fff;
+  box-shadow: 0 6px #ab3c3c;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  @include border-radius(5px);
+}
+
 
 .hidden {
   visibility: hidden;
@@ -47,6 +74,13 @@ div#start, div#pause {
   align-items: center;
   flex-flow: column;
   justify-content: center;
+}
+
+div#start {
+  h1{
+    margin: 0 auto;
+  }
+  
 }
 
 #pause h1 {
