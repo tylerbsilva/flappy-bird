@@ -13,6 +13,10 @@ canvas#main-canvas {
   height: 100%;
 }
 
+div {
+  margin: 0 auto;
+}
+
 #overlay {
   position: absolute;
   z-index: 1;
@@ -80,7 +84,7 @@ div#start {
   h1{
     margin: 0 auto;
   }
-  
+
 }
 
 #pause h1 {
