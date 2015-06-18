@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('keydown', function(e){
     if (e.keyCode == 32) {
-      app.pause();
+      alert("PAUSED");
     }
   });
 });

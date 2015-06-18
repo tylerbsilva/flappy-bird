@@ -36,8 +36,4 @@ FlappyBird.prototype.run = function() {
   this.pipes.run();
 };
 
-FlappyBird.prototype.pause = function() {
-  this.graphics.pause();
-};
-
 exports.FlappyBird = FlappyBird;

@@ -10,6 +10,11 @@ PhysicsSystem.prototype.run = function() {
   window.setInterval(this.tick.bind(this), 1000 /60);
 };
 
+PhysicsSystem.prototype.pause = function() {
+  this.collisionSystem.tick(1);
+};
+
+
 PhysicsSystem.prototype.tick = function() {
   for (var i=0; i<this.entities.length; i++) {
     var entity = this.entities[i];
