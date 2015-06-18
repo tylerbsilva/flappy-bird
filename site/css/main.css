@@ -367,7 +367,8 @@ canvas#main-canvas {
   height: 100%; }
 
 div {
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
 
 #overlay {
   position: absolute;
@@ -375,7 +376,8 @@ div {
   top: 0;
   left: 0; }
   #overlay h1 {
-    margin-left: 1em; }
+    margin-left: 1em;
+    text-align: left; }
   #overlay #pauseButton {
     margin-left: 2em; }
 
