@@ -7,7 +7,7 @@ var PipeTop = function() {
   this.color = 'green';
 
   this.size = {
-    x: 0.2,
+    x: 0.1,
     y: 0.4
   };
 

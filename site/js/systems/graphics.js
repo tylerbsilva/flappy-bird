@@ -22,8 +22,8 @@ GraphicsSystem.prototype.run = function() {
 };
 
 GraphicsSystem.prototype.pause = function() {
-	window.cancelAnimationFrame(this.frame);
-	document.getElementById('pause').className = "";
+  window.cancelAnimationFrame(this.frame);
+  document.getElementById('pause').className = "";
 };
 
 
@@ -42,17 +42,19 @@ GraphicsSystem.prototype.tick = function() {
   this.context.translate(this.canvas.width / 2, this.canvas.height);
   //flip canvas so y axis is upwards
   this.context.scale(this.canvas.height, -this.canvas.height);
-
+  // Loop through the entities
   for (var i=0; i<this.entities.length; i++) {
     var entity = this.entities[i];
     //skip entity if no graphic present
     if (!('graphics' in entity.components)) {
       continue;
     }
+    //draw the graphic to the screen
     entity.components.graphics.draw(this.context);
   }
   //this.drawGrid();
   this.context.restore();
+  // recall the requestAnimationFrame
   window.requestAnimationFrame(this.tick.bind(this));
 };
 
