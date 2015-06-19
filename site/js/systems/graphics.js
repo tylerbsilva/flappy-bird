@@ -1,5 +1,4 @@
 var physicsSystem = require('./physics');
-var pipeSystem = require('./spawn');
 var timer = require('./timer');
 
 var GraphicsSystem = function(entities) {
@@ -9,8 +8,6 @@ var GraphicsSystem = function(entities) {
   // Context is what we draw to
   this.context = this.canvas.getContext('2d');
   this.frame = 0;
-  this.pipeSystem = new pipeSystem.SpawnPipeSystem(entities);
-  this.count = 3;
 };
 
 GraphicsSystem.prototype.base = function(){
@@ -21,14 +18,12 @@ GraphicsSystem.prototype.base = function(){
 GraphicsSystem.prototype.run = function() {
   // Run the render loop
   this.frame = window.requestAnimationFrame(this.tick.bind(this));
-  this.pipeSystem.run();
   document.getElementById('pause').className = "hidden";
 };
 
 GraphicsSystem.prototype.pause = function() {
 	window.cancelAnimationFrame(this.frame);
 	document.getElementById('pause').className = "";
-  this.pipeSystem.pause();
 };
 
 
