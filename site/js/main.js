@@ -40,4 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
       app.resume();
     }
   });
+  
+// IF USER HASN'T CLICKED, THROW SOME ACCELERATION ON THEM PRIOR TO FIRST PIPE.
+  var bird = app.entities[2];
+  window.setInterval(function() {
+    if (bird.components.physics.acceleration.y !== -1.5){
+      bird.components.physics.acceleration.y = -1.5;
+    }
+  },3000);
 });

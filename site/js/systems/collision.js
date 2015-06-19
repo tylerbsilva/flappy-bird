@@ -6,8 +6,9 @@ var pipeTop = require('../entities/pipeTop');
 var pipeDestroyer = require('../entities/pipeDestroyer');
 var scorer = require('../entities/scorer');
 
-var CollisionSystem = function(entities) {
+var CollisionSystem = function(entities, physics) {
   this.entities = entities;
+  this.physics = physics;
   this.scoreSystem = new scoreSystem.ScoreSystem();
   this.graphicsSystem = new graphicsSystem.GraphicsSystem();
 };

@@ -14,6 +14,7 @@ InputSystem.prototype.onClick = function() {
   //console.log('click');
   var bird = this.entities[2];
   bird.components.physics.velocity.y = 0.6;
+  bird.components.physics.acceleration.y = -1.5;
 };
 
 InputSystem.prototype.onTouch = function(e) {
@@ -21,6 +22,7 @@ InputSystem.prototype.onTouch = function(e) {
   e.preventDefault();
   var bird = this.entities[2];
   bird.components.physics.velocity.y = 0.6;
+  bird.components.physics.acceleration.y = -1.5;
 };
 
 InputSystem.prototype.pause = function(e) {

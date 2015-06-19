@@ -6,6 +6,7 @@ var Bird = function() {
   this.name = 'bird';
   this.color = 'yellow';
   this.radius = 0.02;
+  this.count = 3;
 
   var physics = new physicsComponent.PhysicsComponent(this);
   physics.position.x = 0;
@@ -24,10 +25,12 @@ var Bird = function() {
 };
 
 Bird.prototype.onCollision = function(entity) {
-  console.log("Bird collided with entity:", entity);
+  //console.log("Bird collided with entity:", entity);
   this.components.physics.position.y = 0.5;
   this.components.physics.position.x = 0;
   this.components.physics.velocity.y = 0;
+  this.components.physics.acceleration.y = 0;
+  this.count = 3;
 };
 
 exports.Bird = Bird;

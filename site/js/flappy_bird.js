@@ -20,7 +20,7 @@ var FlappyBird = function() {
   this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
   this.physics = new physicsSystem.PhysicsSystem(this.entities);
   this.clicks = new inputSystem.InputSystem(this.entities);
-  this.pipes = new pipeSystem.SpawnPipeSystem(this.entities);
+  //this.pipes = new pipeSystem.SpawnPipeSystem(this.entities);
   this.collision = new collisionSystem.CollisionSystem(this.entities);
   this.score = new scoreSystem.ScoreSystem();
 };
@@ -36,7 +36,7 @@ FlappyBird.prototype.run = function() {
   this.graphics.run();
   this.physics.run();
   this.clicks.run();
-  this.pipes.run();
+  //this.pipes.run();
   this.status = 1;
 };
 
@@ -44,7 +44,7 @@ FlappyBird.prototype.run = function() {
 FlappyBird.prototype.pause = function() {
   this.graphics.pause();
   this.physics.pause();
-  this.pipes.pause();
+  //this.pipes.pause();
   this.status = 2;
 };
 
@@ -52,7 +52,7 @@ FlappyBird.prototype.pause = function() {
 FlappyBird.prototype.resume = function() {
   this.graphics.run();
   this.physics.resume();
-  this.pipes.resume();
+  //this.pipes.resume();
   this.status = 1;
 };
 

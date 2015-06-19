@@ -20,6 +20,7 @@ PhysicsSystem.prototype.resume = function() {
   this.timer.resume();
 };
 
+
 PhysicsSystem.prototype.tick = function() {
   for (var i=0; i<this.entities.length; i++) {
     var entity = this.entities[i];

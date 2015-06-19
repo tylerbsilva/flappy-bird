@@ -1,5 +1,3 @@
-var pipeTop = require('../entities/pipeTop');
-
 var ScoreSystem = function() {
   // span that we're updating
   this.scoreSpan = document.getElementById('score');
